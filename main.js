@@ -13,22 +13,46 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 2000);
 });
 
-// booking section 
+
+
 document.getElementById("bookingForm").addEventListener("submit", function(event) {
     event.preventDefault();
     let whereTo = document.getElementById("whereTo").value;
-    let numberOfPeople = document.getElementById("numberOfPeople").value;
-    let startDate = document.getElementById("startDate").value;
-    let endDate = document.getElementById("endDate").value;
+    let numberOfPeople = parseInt(document.getElementById("numberOfPeople").value);
+    let startDate = new Date(document.getElementById("startDate").value);
+    let endDate = new Date(document.getElementById("endDate").value);
     let description = document.getElementById("description").value;
 
-    if (whereTo && numberOfPeople && startDate && endDate && description) {
-        this.reset();
+    let errors = [];
+
+
+    if (numberOfPeople < 1 || isNaN(numberOfPeople)) {
+        errors.push("Number of people should be at least 1.");
+    }
+
+    if (endDate < startDate) {
+        errors.push("End date should be greater than or equal to start date.");
+    }
+
+    if (description.length < 50) {
+        errors.push("Description should have at least 50 characters.");
+    }
+
+    if (errors.length === 0) {
         alert("Booking successful!");
+        document.getElementById("bookingForm").reset();
     } else {
-        alert("Please fill in all fields.");
+        let errorMessage = "Please fix the following errors:\n";
+        errors.forEach(function(error) {
+            errorMessage += "- " + error + "\n";
+        });
+        alert(errorMessage);
     }
 });
+
+document.getElementById('startDate').onchange = function () {
+    document.getElementById('endDate').setAttribute('min',  this.value);
+};
 
 
 function createStarRating() {
@@ -53,7 +77,6 @@ function createStarRating() {
     });
 }
 
-
 createStarRating();
 
 function redirectToBooking() {
@@ -71,22 +94,5 @@ function redirectToLogin() {
 }
 
 
-//login validation
 
-document.getElementById('loginForm').addEventListener('submit', function (event) {
-
-    const email = document.getElementById('inputEmail').value;
-    const password = document.getElementById('inputPassword').value;
-
-    // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-    // const isPasswordValid = passwordRegex.test(password);
-    // const phoneRegex = /^\d{10}$/;
-    // const isPhoneValid = phoneRegex.test(contact);
-    // const emailRegex = /\S+@\S+\.\S+/;
-    // const isEmailValid = emailRegex.test(email);
-
-    if (email && password) {
-        alert("You have successfully logged in using : " + email)
-    }
-});
 

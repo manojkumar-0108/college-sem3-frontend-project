@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myTrip</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="main">
+        <!-- Navigation Bar -->
+        <div id="nav">
+            <div id="nav-part-1">
+                <h1>myTrip</h1>
+            </div>
+            <div id="nav-part-2">
+                <h3><a href="#">Home</a></h3>
+                <h3><a href="#booking-section">Book</a></h3>
+                <div class="dropdown">
+                    <h3><a href="#package-section">Packages</a></h3>
+                    <div class="dropdown-content">
+                        <a href="#package-section">United States</a>
+                        <a href="#package-section">India</a>
+                        <a href="#package-section">France</a>
+                        <a href="#package-section">Germany</a>
+                    </div>
+                </div>
+                <h3><a href="#services-section">Services</a></h3>
+                <h3><a href="#gallery-section">Gallery</a></h3>
+                <h3><a href="#about-section">About</a></h3>
+            </div>
+            <div id="nav-part-3">
+                <button onclick="redirectToLogin()">Login</button>
+                <button onclick="redirectToRegister()">Register</button>
+            </div>
+        </div>
+
+        <!-- background image  -->
+        <div id="bg-image">
+            <!-- <img src="https://images.pexels.com/photos/163185/old-retro-antique-vintage-163185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="main-image"> -->
+            <img src="https://images.pexels.com/photos/7666073/pexels-photo-7666073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="main-cover-image">
+
+            <div id="bg-content">
+                <h2>Welcome to <span>myTrip</span></h2>
+                <h3>Visit <span id="country-name">Japan</span> </h3>
+                <button onclick="redirectToBooking()">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Booking section  -->
+        <section id="booking-section">
+            <div class="page-title">
+                <h2>Booking</h2>
+            </div>
+            <div id="booking">
+                <!-- <h2>Book</h2> -->
+                <img src="https://images.pexels.com/photos/4300393/pexels-photo-4300393.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Brand Image">
+                <div id="booking-form">
+                    <form id="bookingForm">
+                        <select id="whereTo" name="whereTo" placeholder>
+                            <option value="" disabled selected>Where To</option>
+                            <option value="Toronto">Toronto</option>
+                            <option value="London">London</option>
+                            <option value="Dubai">Dubai</option>
+                            <option value="Tokyo">Tokyo</option>
+                            <option value="Bejing">Bejing</option>
+                        </select>
+                        <input type="text" id="numberOfPeople" name="numberOfPeople" placeholder="How Many Person">
+                        <span class="startDate">Start Date</span> <input type="date" id="startDate" name="startDate"
+                            min="2023-12-10">
+                        <span class="endDate">End Date</span> <input type="date" id="endDate" name="endDate"
+                            min="2023-12-10">
+                        <textarea id="description" name="description" minlength="50" maxlength="500" rows="10"
+                            placeholder="Enter your name and details"></textarea>
+                        <div class="book-now">
+                            <button type="submit" id="bookNow">Book Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Package section  -->
+
+        <div id="package-section">
+            <div class="page-title">
+                <h2>Packages</h2>
+            </div>
+            <!-- Row 1 -->
+            <div class="package-card-row">
+                <div class="package-info-div">
+                    <img src="https://images.pexels.com/photos/2115367/pexels-photo-2115367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Dubai">
+                    <div class="package-info">
+                        <h3>Dubai</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sunt?</p>
+                        <h4>Price: $12,840</h4>
+                        <div class="rating" data-rating="4.6"></div>
+                        <div class="book-now">
+                            <button onclick="redirectToBooking()">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-info-div">
+                    <img src="https://images.pexels.com/photos/12857684/pexels-photo-12857684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Kathmandu">
+                    <div class="package-info">
+                        <h3>Kathmandu</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sunt?</p>
+                        <h4>Price: $9,840</h4>
+                        <div class="rating" data-rating="4.5"></div>
+                        <div class="book-now">
+                            <button onclick="redirectToBooking()">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-info-div">
+                    <img src="https://images.pexels.com/photos/3574440/pexels-photo-3574440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Shimla">
+                    <div class="package-info">
+                        <h3>Shimla</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sunt?</p>
+                        <h4>Price: $6,840</h4>
+                        <div class="rating" data-rating="4.6"></div>
+                        <div class="book-now">
+                            <button onclick="redirectToBooking()">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="package-card-row">
+                <div class="package-info-div">
+                    <img src="https://images.pexels.com/photos/786946/pexels-photo-786946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Kashmir">
+                    <div class="package-info">
+                        <h3>Kashmir</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sunt?</p>
+                        <h4>Price: $8,940</h4>
+                        <div class="rating" data-rating="4.8"></div>
+                        <div class="book-now">
+                            <button onclick="redirectToBooking()">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-info-div">
+                    <img src="https://images.pexels.com/photos/472309/pexels-photo-472309.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Thailand">
+                    <div class="package-info">
+                        <h3>Thailand</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sunt?</p>
+                        <h4>Price: $7,999</h4>
+                        <div class="rating" data-rating="4.4"></div>
+                        <div class="book-now">
+                            <button onclick="redirectToBooking()">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-info-div">
+                    <img src="https://images.pexels.com/photos/4525420/pexels-photo-4525420.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Bhutan">
+                    <div class="package-info">
+                        <h3>Bhutan</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sunt?</p>
+                        <h4>Price: $5,656</h4>
+                        <div class="rating" data-rating="3.4"></div>
+                        <div class="book-now">
+                            <button onclick="redirectToBooking()">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="package-card-row">
+                <div class="package-info-div">
+                    <img src="https://images.pexels.com/photos/1842332/pexels-photo-1842332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Singapore">
+                    <div class="package-info">
+                        <h3>Singapore</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sunt?</p>
+                        <h4>Price: $9,999</h4>
+                        <div class="rating" data-rating="3.9"></div>
+                        <div class="book-now">
+                            <button onclick="redirectToBooking()">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-info-div">
+                    <img src="https://images.pexels.com/photos/2067057/pexels-photo-2067057.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Tokyo">
+                    <div class="package-info">
+                        <h3>Tokyo</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sunt?</p>
+                        <h4>Price: $7,080</h4>
+                        <div class="rating" data-rating="4"></div>
+                        <div class="book-now">
+                            <button onclick="redirectToBooking()">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-info-div">
+                    <img src="https://images.pexels.com/photos/4429333/pexels-photo-4429333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Goa">
+                    <div class="package-info">
+                        <h3>Goa</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sunt?</p>
+                        <h4>Price: $10,840</h4>
+                        <div class="rating" data-rating="4.2"></div>
+                        <div class="book-now">
+                            <button onclick="redirectToBooking()">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Services section  -->
+
+        <div id="services-section">
+            <div class="page-title">
+                <h2>Our <span>S</span>ervices</h2>
+            </div>
+            <div id="services">
+                <div class="service-card">
+                    <img src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Affordable Hotel">
+                    <h3>Affordable Hotel</h3>
+                    <p>Great accommodations at affordable prices!</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.pexels.com/photos/758744/pexels-photo-758744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Adventure Tours">
+                    <h3>Adventure Tours</h3>
+                    <p>Exciting adventure tours for thrill-seekers!</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.pexels.com/photos/5638815/pexels-photo-5638815.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Food & Drinks">
+                    <h3>Food & Drinks</h3>
+                    <p>Delicious food and a variety of drinks available.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.pexels.com/photos/38271/ipad-map-tablet-internet-38271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Safety Guide">
+                    <h3>Safety Guide</h3>
+                    <p>Comprehensive safety measures for a secure stay.</p>
+
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.pexels.com/photos/2373201/pexels-photo-2373201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Spa & Wellness">
+                    <h3>Spa & Wellness</h3>
+                    <p>Relaxation and rejuvenation services available.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.pexels.com/photos/4577403/pexels-photo-4577403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Local Cultural Experiences">
+                    <h3>Local Cultural Experiences</h3>
+                    <p>Lorem ipsum dolor sit amet elit. Obcaecati, et.
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Gallery Section  -->
+
+        <div id="gallery-section">
+            <div class="page-title">
+                <h2>Picture <span>G</span>allery</h2>
+            </div>
+            <div id="gallery">
+                <img src="https://images.pexels.com/photos/3282515/pexels-photo-3282515.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+                <img src="https://images.pexels.com/photos/9943040/pexels-photo-9943040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+                <img src="https://images.pexels.com/photos/2873971/pexels-photo-2873971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+                <img src="https://images.pexels.com/photos/2871654/pexels-photo-2871654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+                <img src="https://images.pexels.com/photos/10740862/pexels-photo-10740862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+                <img src="https://images.pexels.com/photos/15017212/pexels-photo-15017212/free-photo-of-safari-jeep-in-savannah.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+                <img src="https://images.pexels.com/photos/3772411/pexels-photo-3772411.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+                <img src="https://images.pexels.com/photos/5225075/pexels-photo-5225075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+                <img src="https://images.pexels.com/photos/6533354/pexels-photo-6533354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+                <img src="https://images.pexels.com/photos/7968303/pexels-photo-7968303.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+                <img src="https://images.pexels.com/photos/9909228/pexels-photo-9909228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+                <img src="https://images.pexels.com/photos/6367202/pexels-photo-6367202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+                <img src="https://images.pexels.com/photos/5155160/pexels-photo-5155160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+                <img src="https://images.pexels.com/photos/5537711/pexels-photo-5537711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+                <img src="https://images.pexels.com/photos/8281088/pexels-photo-8281088.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="galler-image">
+            </div>
+
+        </div>
+
+        <!-- Booking section  -->
+        <section id="about-section">
+            <div class="page-title">
+                <h2>About <span>U</span>S</h2>
+            </div>
+            <div id="about-us">
+                <!-- <h2>Book</h2> -->
+                <img src="https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Brand Image">
+                <div id="right-part">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, voluptas vero! Et blanditiis omnis
+                        neque autem a eum provident nihil vitae aliquam ipsam, soluta tenetur eveniet totam consequatur
+                        veniam illo.
+                    </p>
+                    <div id="custom-hr">
+
+                    </div>
+                    <h3>
+                        Meet us
+                        +40724343567<br>
+                        Contact Us : alpineTravels@gmail.com<br>
+                        Our Office : Amman St, no 35, 4th floor, ap 10, Bucharest
+                    </h3>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer section  -->
+        <div id="footer">
+            <div id="social-icons">
+                <a href="#"><i class="ri-facebook-box-fill"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-youtube-line"></i></i></a>
+                <a href="#"><i class="ri-twitter-x-line"></i></a>
+                <a href="#"><i class="ri-linkedin-box-fill"></i></i></a>
+            </div>
+            <h1>myTrip</h1>
+            <div id="footer-right-part">
+                <h2>© 2023 My Trip Ltd. All Rights Reserved.</h2>
+                <h3>Developed by Manoj Kumar</h3>
+            </div>
+        </div>
+        <div id="end">
+
+        </div>
+        <!-- End  -->
+        <script src="main.js"></script>
+
+    </div>
+</body>
+
+</html>

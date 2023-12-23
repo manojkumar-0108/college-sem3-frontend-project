@@ -64,13 +64,11 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#nav-part-1 h1::after {
-    content: "©";
+#nav-part-1 h1 sup {
+    margin-top: -2vh;
+    line-height: 1.5;
     font-weight: 400;
     font-size: 1.3vw;
-    position: absolute;
-    left: 13%;
-    top: 22%;
     color: rgb(84, 82, 82);
 }
 
@@ -871,17 +869,15 @@ body {
     color: var(--hover-color);
 }
 
-#footer h1::after {
-    content: "©";
-    font-weight: 500;
-    font-size: 1.5vw;
-    position: absolute;
-    left: 45.8%;
-    top: 30%;
-    color: black;
+#footer h1 sup {
+    margin-top: -2.2vh;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 1.3vw;
+    color: rgb(0, 0, 0);
 }
 
-#footer h1:hover::after {
+#footer h1:hover sup {
     color: var(--hover-color);
 }
 

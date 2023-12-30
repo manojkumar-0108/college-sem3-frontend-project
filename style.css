@@ -120,6 +120,7 @@ body {
     display: none;
     position: absolute;
     background-color: #fffdfd;
+    /* background-color: red; */
     min-width: 10vw;
     /* min-height: 10vw; */
     /* padding: 1vw; */
@@ -720,6 +721,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
     /* align-items: center; */
 }
 
@@ -727,6 +729,7 @@ body {
     /* margin: 2.5vh 0 1vh 0; */
     margin-bottom: 2vh;
     height: 55vh;
+    /* width: 300vw; */
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -737,19 +740,23 @@ body {
     gap: 5vw;
     position: relative;
     background-color: rgb(231, 231, 249);
+
 }
 
 #gallery::-webkit-scrollbar {
     display: none;
 }
 
-.img-div {
+#gallery img {
     width: 20vw;
     height: 90%;
     /* background-color: yellow; */
     flex-shrink: 0;
     border-radius: 1vw;
     box-shadow: 0 0 1vh black;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1vw;
     animation-name: model-scroll-animation;
     animation-duration: 35s;
     animation-timing-function: linear;
@@ -759,17 +766,11 @@ body {
     /* padding: 1vh 5vw; */
 }
 
-.img-div img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 1vw;
-    /* margin-bottom: 1vh; */
-
-    /* position: relative; */
-    /* z-index: 2; */
+#gallery:hover img {
+    animation-play-state: paused;
 }
+
+
 
 #gallery img:hover {
     /* box-shadow: 0 0 2.5vh rgb(5, 108, 226); */
@@ -778,7 +779,9 @@ body {
     /* rotate: 10deg; */
     z-index: 1;
     box-shadow: 0 0 2.5vh #f16b0bd1;
-    transform: translate(0%, 0%) scale(1.2);
+    /* rotate: -1deg; */
+    /* transform-origin: 0% 10%; */
+    transition-duration: 3s;
     transition: all ease 0.3s;
 }
 
